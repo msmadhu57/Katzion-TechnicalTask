@@ -26,7 +26,7 @@ global class sendCalloutMockTest implements HttpCalloutMock {
         TransactionItem__c tI2 = new TransactionItem__c(Name = 'TestTItem2', Item_Cost__c = 100.45, Transaction__c = t.id);
         tItemsList.add(tI2);
         database.insert(tItemsList);
-        Set < Id > transID = new set < ID > ();
+        Set < Id > transID = new set < Id > ();
         transID.add(t.Id);
         // This causes a fake response to be generated
         Test.setMock(HttpCalloutMock.class, new sendCalloutMockTest());
