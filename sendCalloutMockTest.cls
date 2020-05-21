@@ -9,7 +9,7 @@ Version     Author              Date            Description
 
 @isTest
 global class sendCalloutMockTest implements HttpCalloutMock {
-    // Implement the HttpCalloutMock class to generate a Fake Response
+    // Implement the HttpCalloutMock interface to generate a Fake Response
     public HTTPResponse respond(HTTPRequest request) {
         HttpResponse response = new HttpResponse();
         String resBody = 'Successfully Received';
