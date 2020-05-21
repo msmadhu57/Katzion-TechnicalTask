@@ -11,8 +11,8 @@ trigger TransactionItemTestHttpCalloutTrigger on TransactionItem__c(after insert
     if (!(TriggerExecutionControl__c.getInstance().Skip_TransactionItemTrigger__c)) {
         // Avoids Trigger getting in to recursive loop
         if (trigger.isAfter && TransactionItemTriggerHandler.firstRun) {
-            TransactionItemTriggerHandler.firstRun = false;
             if (trigger.isInsert) {
+                TransactionItemTriggerHandler.firstRun = false;
                 // Sends the list of recently added Transaction Items from After Insert Trigger
                 TransactionItemTriggerHandler.sendDataToCallout(Trigger.New);
             }
